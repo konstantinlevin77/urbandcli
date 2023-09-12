@@ -37,7 +37,7 @@ func GetRandomDefinition() Definition{
 	randomDefinition := Definition{}
 
 	randomDefinition.Title = doc.Find("a.word").First().Text()
-	randomDefinition.Description = doc.Find("div.definition").First().Text()
+	randomDefinition.Description = doc.Find("div.meaning").First().Text()
 	randomDefinition.Example = doc.Find("div.example").First().Text()
 	randomDefinition.AuthorDate = doc.Find("div.contributor").First().Text()
 
