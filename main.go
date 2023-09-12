@@ -15,6 +15,6 @@ func main() {
 	fmt.Println(randomDef.Example)
 	fmt.Println()
 	fmt.Println(randomDef.AuthorDate)
-
+	
 
 }

@@ -12,6 +12,8 @@ type Definition struct{
 	Description string
 	Example string
 	AuthorDate string
+	Upvotes string
+	Downvotes string
 }
 
 func GetRandomDefinition() Definition{
@@ -40,6 +42,7 @@ func GetRandomDefinition() Definition{
 	randomDefinition.Description = doc.Find("div.meaning").First().Text()
 	randomDefinition.Example = doc.Find("div.example").First().Text()
 	randomDefinition.AuthorDate = doc.Find("div.contributor").First().Text()
+	
 
 	return randomDefinition
 }
