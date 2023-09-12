@@ -6,11 +6,10 @@ import "github.com/konstantinlevin77/urbandcli/scraper"
 func main() {
 
 	fmt.Println("Main package ready!")
-	defs := scraper.GetRandomEntries()
+	
+	randomDef := scraper.GetRandomDefinition()
 
-	for _,def:= range defs {
-		fmt.Println(def)
-		fmt.Print("\n")
-	}
+	fmt.Println(randomDef)
+
 
 }

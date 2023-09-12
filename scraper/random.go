@@ -14,7 +14,8 @@ type Definition struct{
 	AuthorDate string
 }
 
-func GetRandomEntries()  []Definition{
+func GetRandomDefinition() Definition{
+
 
 	res,err := http.Get("https://www.urbandictionary.com/random.php")
 	if err!=nil {
@@ -33,24 +34,13 @@ func GetRandomEntries()  []Definition{
 		log.Fatal(err)
 	}
 
+	randomDefinition := Definition{}
 
-	sevenDefs := make([]Definition,7)
+	randomDefinition.Title = doc.Find("a.word").First().Text()
+	randomDefinition.Description = doc.Find("div.definition").First().Text()
+	randomDefinition.Example = doc.Find("div.example").First().Text()
+	randomDefinition.AuthorDate = doc.Find("div.contributor").First().Text()
 
-	doc.Find("a.word").Each(func(i int, s *goquery.Selection) {
-		sevenDefs[i].Title = s.Text()
-	})
-
-	doc.Find("div.meaning").Each(func(i int, s *goquery.Selection) {
-		sevenDefs[i].Description = s.Text()
-	})
-
-	doc.Find("div.example").Each(func(i int, s *goquery.Selection) {
-		sevenDefs[i].Example = s.Text()
-	})
-
-	doc.Find("div.contributor").Each(func(i int, s *goquery.Selection) {
-		sevenDefs[i].AuthorDate = s.Text()
-	})
-
-	return sevenDefs
+	return randomDefinition
 }
+
