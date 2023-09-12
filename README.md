@@ -1,6 +1,6 @@
 # Urban Dictionary on Your Terminal
 
-**Project, isn't finished yet!**]
+**Project, isn't finished yet!**
 
 Hello, I'm an absolute beginner in Golang and decided to do a project to 
 get used to the language. And one day, an idea came to my mind while I 
@@ -8,7 +8,7 @@ have a shower: implementing a urban dictionary cli. I've checked if
 there's an official public API but unfortunately there's not so I've 
 decided to write a simple api with web scraping. I haven't written CLI 
 part yet but it'll use API's functions directly get the urban dictionary 
-definitions in your browser :)
+definitions in your terminal  :)
 
 ### Disclaimer
 
