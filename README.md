@@ -1,6 +1,6 @@
 # Urban Dictionary on Your Terminal
 
-[Project, isn't finished yet!]]
+**Project, isn't finished yet!**]
 
 Hello, I'm an absolute beginner in Golang and decided to do a project to 
 get used to the language. And one day, an idea came to my mind while I 
