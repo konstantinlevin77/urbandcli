@@ -6,15 +6,16 @@ import "github.com/konstantinlevin77/urbandcli/scraper"
 func main() {
 
 	
-	randomDef := scraper.GetRandomDefinition()
+	testSearch := scraper.SearchDefinition("Mehmet",1)
 
-	fmt.Println(randomDef.Title)
-	fmt.Println(randomDef.Description)
+	for _,item := range testSearch {
+		fmt.Println(item.Title)
+		fmt.Println(item.Description)
+		fmt.Println()
+		fmt.Println(item.Example)
+		fmt.Println(item.AuthorDate)
+	}
 
-	fmt.Println()
-	fmt.Println(randomDef.Example)
-	fmt.Println()
-	fmt.Println(randomDef.AuthorDate)
 	
 
 }
