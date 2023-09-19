@@ -3,6 +3,8 @@ package scraper
 import (
 	"log"
 	"net/http"
+
+	"strings"
 	"github.com/PuerkitoBio/goquery"
 )
 
@@ -14,7 +16,20 @@ func SearchDefinition(searchTerm string,numDefs int) []Definition {
 		log.Fatal("Number of definitions you want to see can be 1 at least and 7 at most.")
 	}
 
-	var url string = "https://www.urbandictionary.com/define.php?term=" + searchTerm
+	var processedSearchTerm string
+
+	if strings.Contains(searchTerm," ") {
+
+		for _,word := range strings.Fields(searchTerm) {
+			processedSearchTerm =  processedSearchTerm + "+" + word
+			
+		}
+	} else {
+		processedSearchTerm = searchTerm
+	}
+
+	
+	var url string = "https://www.urbandictionary.com/define.php?term=" + processedSearchTerm
 
 	res,err := http.Get(url)
 
@@ -33,6 +48,8 @@ func SearchDefinition(searchTerm string,numDefs int) []Definition {
 			return make([]Definition,0)
 		}
 
+
+		log.Println("Bok yemiş bülbül??")
 		log.Fatalf("HTTP Error: %d %s",res.StatusCode,res.Status)
 	}
 
