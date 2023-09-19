@@ -22,6 +22,7 @@ func main() {
 			color.Yellow("urbandcli is an unofficial Urban Dictionary CLI, type urbandcli --help for more.")
 		},
 		DisableAutoGenTag: true,
+		
 	}
 
 	rootCmd.AddCommand(cli.RandomDefinitionCmd)
