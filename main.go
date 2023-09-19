@@ -10,7 +10,8 @@ import (
 
 func init(){
 
-	
+	cli.SearchDefinitionCmd.Flags().IntVarP(&cli.NumSearchDefinitions,"num","n",1,"Number of definitions to display")
+
 
 }
 
@@ -26,6 +27,7 @@ func main() {
 	}
 
 	rootCmd.AddCommand(cli.RandomDefinitionCmd)
+	rootCmd.AddCommand(cli.SearchDefinitionCmd)
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
